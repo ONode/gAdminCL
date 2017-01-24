@@ -4,7 +4,6 @@
 const prp = require('../lib/common/prepare');
 const E = prp.keystone.Field.Types;
 const ks = prp.keystone;
-
 var P = new ks.List('Pricing', {
   autokey: {from: 'stock_full_id', path: 'key', unique: true},
   map: {name: 'stock_full_id'}

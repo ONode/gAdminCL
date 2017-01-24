@@ -1,9 +1,10 @@
 /**
  * Created by hesk on 12/21/2014.
  */
-const keystone = require('keystone');
-const T = keystone.Field.Types;
-var Tokenized = new keystone.List('Tokenized', {
+const prp = require('../lib/common/prepare');
+const T = prp.keystone.Field.Types;
+const ks = prp.keystone;
+var Tokenized = new ks.List('Tokenized', {
     map: {name: 'token'},
     nocreate: true,
     defaultSort: '-expire'

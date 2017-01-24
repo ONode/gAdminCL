@@ -1,7 +1,7 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 try {
-    require('dotenv').config();
+  require('dotenv').config();
 } catch (e) {
 
 }
@@ -24,34 +24,34 @@ keystone.import('models');
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
-    _: require('lodash'),
-    env: keystone.get('env'),
-    utils: keystone.utils,
-    editable: keystone.content.editable
-    //chartbeat_property: keystone.get('chartbeat property'),
-    //chartbeat_domain: keystone.get('chartbeat domain')
+  _: require('lodash'),
+  env: keystone.get('env'),
+  utils: keystone.utils,
+  editable: keystone.content.editable
+  //chartbeat_property: keystone.get('chartbeat property'),
+  //chartbeat_domain: keystone.get('chartbeat domain')
 });
 // Setup common locals for your emails. The following are required by Keystone's
 // default email templates, you may remove them if you're using your own.
 keystone.set('email locals', {
-    logo_src: '/images/9TRzaXMdc.png',
-    logo_width: 176,
-    logo_height: 288,
-    theme: {
-        email_bg: '#f9f9f9',
-        link_color: '#2697de',
-        buttons: {
-            color: '#fff',
-            background_color: '#2697de',
-            border_color: '#1a7cb7'
-        }
+  logo_src: '/images/9TRzaXMdc.png',
+  logo_width: 176,
+  logo_height: 288,
+  theme: {
+    email_bg: '#f9f9f9',
+    link_color: '#2697de',
+    buttons: {
+      color: '#fff',
+      background_color: '#2697de',
+      border_color: '#1a7cb7'
     }
+  }
 });
 keystone.set('cors allow origin', true);
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-    'user': ['users', 'tokenizeds'],
-    'main': ['profiles', 'features', 'enquiries', 'articles', 'pricings']
+  'user': ['UserAdmin', 'tokenizeds'],
+  'main': ['artists', 'features', 'pricings']
 });
 keystone.set('routes', require('./routes'));
 //keystone.set('resty api base address', "/api");

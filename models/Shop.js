@@ -18,7 +18,7 @@ var Shop = new ks.List('Shop', {
   }
 );
 Shop.add({
-  createdAt: {type: E.Datetime, noedit: true, default: Date.now},
+  createtime: {type: E.Datetime, noedit: true, default: Date.now},
   inoperation: {type: E.Boolean, label: '放假中'},
   likecount: {type: E.Number, label: "Like COUNTS"},
   loc: {type: E.GeoPoint, defaults: {country: 'Japan'}},
@@ -49,5 +49,5 @@ Shop.add({
   photoprofile: {type: E.CloudinaryImage, label: '頭像', autoCleanup: true}
 });
 //Shop.relationship({ref: 'Profile', path: 'profiles', refPath: 'wp', label: 'Office Location'});
-Shop.defaultColumns = 'chinese, state|15%, likecount|5%, createdAt|10%';
+Shop.defaultColumns = 'chinese, state|15%, likecount|5%, createtime|10%';
 Shop.register();

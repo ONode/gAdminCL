@@ -1,5 +1,5 @@
 var keystone = require('keystone'),
-	Enquiry = keystone.list('Enquiry');
+	Issue = keystone.list('Issue');
 
 exports = module.exports = function(req, res) {
 	
@@ -8,16 +8,16 @@ exports = module.exports = function(req, res) {
 	
 	// Set locals
 	locals.section = 'contact';
-	locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
+	locals.enquiryTypes = Issue.fields.enquiryType.ops;
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.enquirySubmitted = false;
 	
-	// On POST requests, add the Enquiry item to the database
+	// On POST requests, add the Issue item to the database
 	view.on('post', { action: 'contact' }, function(next) {
 		
-		var newEnquiry = new Enquiry.model(),
-			updater = newEnquiry.getUpdateHandler(req);
+		var newIssue = new Issue.model(),
+			updater = newIssue.getUpdateHandler(req);
 		
 		updater.process(req.body, {
 			flashErrors: true,

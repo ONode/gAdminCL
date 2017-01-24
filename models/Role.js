@@ -3,9 +3,7 @@
  */
 const prp = require('../lib/common/prepare');
 const E = prp.keystone.Field.Types;
-const ks = prp.keystone;
-
-var Role = new ks.List('Role', {
+var Role = new prp.keystone.List('Role', {
     autokey: {from: 'name', path: 'key', unique: true}
 });
 Role.add({

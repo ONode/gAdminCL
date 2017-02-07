@@ -5,7 +5,6 @@
 const prp = require('../lib/common/prepare');
 const E = prp.keystone.Field.Types;
 const ks = prp.keystone;
-
 var Location = new ks.List('Location', {
   autokey: {from: 'map_symbol', path: 'map_symbol', unique: true},
   map: {name: 'english'}

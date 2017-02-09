@@ -13,7 +13,7 @@ P.add({
   print_limit: {type: E.Number, default: -1, label: 'Printing Limitation', required: false},
   license_price: {type: E.Money, default: -1, label: 'Full License Sale Price', required: false},
   estprice: {type: E.Money, default: -1, label: 'Price After Marked Up', required: false},
-  price: {type: E.Money, default: -1, label: 'Original Copy Price', required: false},
+  baseprice: {type: E.Money, default: -1, label: 'Original Copy Price', required: false},
   printed_shared: {type: E.Money, default: -1, label: 'printing shared profit for issuer', required: false},
   factory_shared: {type: E.Money, default: -1, label: 'production shared profit for issuer', required: false},
   currency: {

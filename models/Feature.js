@@ -1,7 +1,6 @@
 const prp = require('../lib/common/prepare');
 const E = prp.keystone.Field.Types;
 const ks = prp.keystone;
-
 var Feature = new ks.List('Feature', {
     autokey: {from: 'name', path: 'display', unique: true},
     map: {name: 'display'},

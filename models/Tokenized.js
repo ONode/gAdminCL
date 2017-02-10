@@ -10,7 +10,7 @@ var Tokenized = new ks.List('Tokenized', {
     defaultSort: '-expire'
 });
 Tokenized.add({
-    user: {noedit: true, type: T.Relationship, ref: 'UserAdmin'},
+    user: {noedit: true, type: T.Relationship, ref: 'Useradmin'},
     token: {noedit: true, type: T.Text, index: true},
     expire: {noedit: true, type: T.Datetime},
     isvalid: {type: T.Boolean},

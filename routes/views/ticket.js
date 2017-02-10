@@ -1,7 +1,7 @@
 /**
  * Created by hesk on 12/13/14.
  */
-var keystone = require('keystone'),
+var keystone = require('keystone-z'),
     async = require('async');
 
 exports = module.exports = function(req, res) {

@@ -1,4 +1,4 @@
-var keystone = require('keystone'),
+var keystone = require('keystone-z'),
 	async = require('async');
 
 exports = module.exports = function(req, res) {

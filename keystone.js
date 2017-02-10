@@ -3,21 +3,20 @@
 try {
   require('dotenv').config();
 } catch (e) {
-
 }
-const keystone = require('keystone');
-const main_con = require('./lib/configinit.json');
+const keystone = require('keystone-z');
 const pug = require('pug');
 //var restyStone = require("resty-stone")(keystone);
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
-//"jwtTokenSecret": "234Ufs(99#@@#*&@9F9855456460V"
-//"ga property": process.env.GA_PROPERTY,
-//"ga domain": process.env.GA_DOMAIN,
-//"chartbeat property": process.env.CHARTBEAT_PROPERTY,
-//"chartbeat domain": process.env.CHARTBEAT_DOMAIN
-keystone.init(main_con);
+//  "jwtTokenSecret": "234Ufs(99#@@#*&@9F9855456460V"
+//  "ga property": process.env.GA_PROPERTY,
+//  "ga domain": process.env.GA_DOMAIN,
+//  "chartbeat property": process.env.CHARTBEAT_PROPERTY,
+//  "chartbeat domain": process.env.CHARTBEAT_DOMAIN
+keystone.set('db opt', {pluralization: false});
+keystone.init(require('./lib/configinit.json'));
 // Load your project's Models
 keystone.import('models');
 // Setup common locals for your templates. The following are required for the
@@ -28,8 +27,8 @@ keystone.set('locals', {
   env: keystone.get('env'),
   utils: keystone.utils,
   editable: keystone.content.editable
-  //chartbeat_property: keystone.get('chartbeat property'),
-  //chartbeat_domain: keystone.get('chartbeat domain')
+  //  chartbeat_property: keystone.get('chartbeat property'),
+  //  chartbeat_domain: keystone.get('chartbeat domain')
 });
 // Setup common locals for your emails. The following are required by Keystone's
 // default email templates, you may remove them if you're using your own.
@@ -50,12 +49,28 @@ keystone.set('email locals', {
 keystone.set('cors allow origin', true);
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-  'user': ['UserAdmin', 'tokenizeds'],
-  'main': ['artists', 'features', 'pricings']
+  'user': ['Useradmin', 'Tokenized'],
+  'main': ['Artist', 'Feature', 'Pricing']
 });
 keystone.set('routes', require('./routes'));
 //keystone.set('resty api base address', "/api");
 //keystone.set('resty meta location', "./models");
 //keystone.set('resty token header', "api-token");
+keystone.set('IntegrationLB', require('./integration/loopback_gallerio'));
 keystone.set('jwtTokenSecret', '234U~s(99#@@#*&@9F9_GG^EB3-5646=0V'); // put in something hard to guess
-keystone.start();
+var mongoose = require('mongoose');
+keystone.start({
+  onMount: function () {
+
+  /*  mongoose.Schema.virtual('id').get(function () {
+      return this._id.toHexString();
+    });
+
+    mongoose.Schema.set('toJSON', {
+      virtuals: true
+    });*/
+  },
+  onStart: function () {
+
+  }
+});

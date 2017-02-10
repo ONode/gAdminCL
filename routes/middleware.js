@@ -9,7 +9,7 @@
  */
 
 const querystring = require('querystring');
-const keystone = require('keystone');
+const keystone = require('keystone-z');
 const crystal = require('crypto-js/sha256');
 
 /**

@@ -18,7 +18,7 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-const keystone = require('keystone');
+const keystone = require('keystone-z');
 const middleware = require('./middleware.js');
 /*const user_api = require('./util/user_operation.js');
 const feature_api = require('./util/smartlistfeaturephoto.js');

@@ -55,7 +55,8 @@ Artist.add({
     options: prp.arr_status,
     default: prp.arr_status[0]
   },
-  verified: {type: E.Boolean, label: 'Verified person'}
+  verified: {type: E.Boolean, label: 'Verified person'},
+  createdAt: {type: E.Datetime, noedit: true, default: Date.now}
 });
-Artist.defaultColumns = 'native_name, state|15%, access|6%, likecount|5%, createdAt|10%';
+Artist.defaultColumns = 'native_name, state|15%, followcount|5%, state|6%,createdAt|10%';
 Artist.register();

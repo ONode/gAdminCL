@@ -1,0 +1,22 @@
+"roles": [
+{
+"name": "Client",
+"ref": "traveler"
+},
+{
+"name": "Driver",
+"ref": "driver"
+},
+{
+"name": "Administrator",
+"ref": "administrator"
+},
+{
+"name": "Entertainer",
+"ref": "performer"
+},
+{
+"name": "Editor",
+"ref": "editor"
+}
+]

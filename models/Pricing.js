@@ -22,5 +22,5 @@ P.add({
   state: {type: E.Select, options: prp.arr_status, default: prp.arr_status[0]},
   createdAt: {type: E.Datetime, noedit: true, default: Date.now}
 });
-P.defaultColumns = 'stock_full_id|4%, print_limit|4%, currency|2%, price|3%';
+P.defaultColumns = 'stock_full_id|4%, print_limit|4%, currency|2%, baseprice|3%';
 P.register();

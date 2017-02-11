@@ -13,16 +13,6 @@
   "user model": "UserAdmin",
   "cookie secret": "4yA`pC]_G=x?r.M%252*fn}i.$=aGsZE~{r~xX-dt!pQ;pOIcUZ(23i9+S79BA$g",
   "auto update": true,
-  "item_status": [
-    "pending",
-    "draft",
-    "proved_publish",
-    "proved",
-    "revoked",
-    "rejected",
-    "archived",
-    "removed"
-  ],
   "doc_type": [
     "complain",
     "fault",

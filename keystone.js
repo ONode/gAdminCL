@@ -54,8 +54,30 @@ keystone.set('nav', {
   'main': ['artists', 'features', 'pricings']
 });
 keystone.set('routes', require('./routes'));
+keystone.set('lb', require('./integration/loopback_gallerio'));
 //keystone.set('resty api base address', "/api");
 //keystone.set('resty meta location', "./models");
 //keystone.set('resty token header', "api-token");
 keystone.set('jwtTokenSecret', '234U~s(99#@@#*&@9F9_GG^EB3-5646=0V'); // put in something hard to guess
-keystone.start();
+//TODO: implementing graphQL
+//@https://github.com/keystonejs/keystone/issues/3209
+keystone.start({
+  onStart: function () {
+
+  },
+  onMount: function () {
+   /* var db = keystone.get('lb').BASEMAP;
+    console.log("test connection", db);
+    db.update_basemap_pricing("58211d5edf28fbe93a0a45fd", {
+      "baseprice": 400,
+      "license_price": 300,
+      "print_limit": 540,
+      "estprice": 450,
+      "currency": "HKD",
+      "listing.monetize": true,
+      "listing.searchable": true
+    }, function () {
+      console.log("test connection completed");
+    });*/
+  }
+});
